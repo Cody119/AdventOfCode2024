@@ -4,7 +4,7 @@ BUILD_DIR=build
 FILE=day3
 
 .PHONY: build
-build:
+build: ${FILE}.nasm
 	mkdir -p ${BUILD_DIR}
 	nasm -felf64 -o ${BUILD_DIR}/${FILE}.o ${FILE}.nasm
 	ld -o ${BUILD_DIR}/${FILE} ${BUILD_DIR}/${FILE}.o
@@ -14,5 +14,5 @@ clean:
 	rm -rf ${BUILD_DIR}
 
 .PHONY: run
-run:
+run: build
 	./${BUILD_DIR}/${FILE}
