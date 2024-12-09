@@ -6,7 +6,7 @@ FILE=day3
 .PHONY: build
 build: ${FILE}.nasm
 	mkdir -p ${BUILD_DIR}
-	nasm -felf64 -o ${BUILD_DIR}/${FILE}.o ${FILE}.nasm
+	nasm -gdwarf -felf64 -o ${BUILD_DIR}/${FILE}.o ${FILE}.nasm
 	ld -o ${BUILD_DIR}/${FILE} ${BUILD_DIR}/${FILE}.o
 
 .PHONY: clean
