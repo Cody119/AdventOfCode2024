@@ -12,8 +12,11 @@ section .rodata
 ; message2:       db "Hello, World2", 10
 ; message2_len    equ $ - message2
 
-file_name:      db "day3.exp", 0
-file_length     equ 71
+; file_name:      db "day3.exp", 0
+; file_length     equ 71
+
+file_name:      db "day3.input", 0
+file_length     equ 17699
 
 %define MAX_NUM_LEN 3
 
@@ -27,7 +30,7 @@ out_buffer: resb out_buffer_len
 global _start
 
 section .text
-    ; _start:
+    _start:
     ;     mov rax, 1              ; system call for write
     ;     mov rdi, 1              ; file handle 1 is stdout
     ;     mov rsi, message        ; address of string to output
